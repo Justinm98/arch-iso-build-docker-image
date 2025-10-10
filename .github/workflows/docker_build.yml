@@ -1,7 +1,6 @@
 name: docker_image_build
 
-on:
-  pull_request:
+on: pull_request
 
 jobs:
   docker-build:

@@ -1,3 +1,5 @@
+schemaVersion: 2.0.0
+
 commandTests:
   - name: "archiso cli exists and is in PATH var"
     command: "mkarchiso"
