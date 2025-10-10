@@ -1,0 +1,5 @@
+commandTests:
+  - name: "archiso cli exists and is in PATH var"
+    command: "mkarchiso"
+    args: ["-h"]
+    exitCode: 0
