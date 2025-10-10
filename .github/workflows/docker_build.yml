@@ -26,6 +26,7 @@ jobs:
           push: true
           tags: jcole91/arch-iso-build:test
   docker-test:
+    needs: docker-build
     runs-on: ubuntu-latest
     steps:
     - name: checkout source
