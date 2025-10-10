@@ -25,10 +25,18 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           load: true
-          tags: ${{ env.LATEST_TAG }}
+          tags: ${{ env.TEST_TAG }}
 
       - name: run structure tests
         uses: plexsystems/container-structure-test-action@v0.1.0
         with:
-          image: ${{ env.LATEST_TAG }}
+          image: ${{ env.TEST_TAG }}
           config: tests.yaml
+
+      - name: Build and push
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: docker/build-push-action@v6
+        with:
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.TEST_TAG }}
