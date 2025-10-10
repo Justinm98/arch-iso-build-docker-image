@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -34,7 +34,7 @@ jobs:
         uses: brpaz/structure-tests-action@1.3.0
         with:
           image: ${{ env.TEST_TAG }}
-          configFile: $GITHUB_WORKSPACE/tests.yaml
+          configFile: tests.yaml
 
       - name: Build and push
         if: ${{ github.ref == 'refs/heads/main' }}
