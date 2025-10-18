@@ -4,3 +4,5 @@ WORKDIR /app
 
 # CLI tool for building an arch linux iso
 RUN pacman -Syu --noconfirm archiso=86-1
+
+USER root
